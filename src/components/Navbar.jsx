@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import toast from "react-hot-toast";
 
 export default function Navbar() {
   const [user, setUser] = useState(null);
@@ -16,12 +17,12 @@ export default function Navbar() {
   const handleLogout = () => {
     localStorage.removeItem("user");
     setUser(null);
+
+    toast.success("Logout successful!");
   };
 
   const linkClass = (path) =>
-    pathname === path
-      ? "px-3 py-1 rounded-md bg-gradient-to-r from-blue-600 via-cyan-500 via-teal-400 to-emerald-400 text-white font-semibold shadow"
-      : "px-3 py-1 rounded-md hover:bg-white/20 transition";
+    pathname === path ? "px-3 py-1 rounded-md bg-gradient-to-r from-blue-600 via-cyan-500 via-teal-400 to-emerald-400 text-white font-semibold shadow" : "px-3 py-1 rounded-md hover:bg-white/20 transition";
 
   return (
     <div className="navbar bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-500 text-white shadow px-6">
@@ -52,7 +53,7 @@ export default function Navbar() {
             Login
           </Link>
         ) : (
-          <button onClick={handleLogout}  className="btn font-bold bg-gradient-to-r from-indigo-600 via-purple-600 via-pink-500 to-red-500 text-white shadow" >
+          <button onClick={handleLogout} className="btn font-bold bg-gradient-to-r from-indigo-600 via-purple-600 via-pink-500 to-red-500 text-white shadow" >
             Logout
           </button>
         )}

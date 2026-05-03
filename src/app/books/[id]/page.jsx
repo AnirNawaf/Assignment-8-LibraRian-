@@ -4,6 +4,7 @@ import books from "@/data/books.json";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 export default function BookDetails() {
   const params = useParams();
@@ -27,21 +28,22 @@ export default function BookDetails() {
     const savedUser = JSON.parse(localStorage.getItem("user"));
 
     if (!savedUser) {
-      alert("Please login first to add this book to Readlist");
+      toast.error("Please login first to add this book");
       window.location.href = "/login";
       return;
     }
 
     if (quantity <= 0) {
-      alert("No copies available");
+      toast.error("No copies available");
       return;
     }
 
     const oldList = JSON.parse(localStorage.getItem("readList")) || [];
+
     const alreadyAdded = oldList.find((item) => item.id === book.id);
 
     if (alreadyAdded) {
-      alert("This book is already in Readlist");
+      toast.error("This book is already in Readlist");
       return;
     }
 
@@ -55,14 +57,14 @@ export default function BookDetails() {
 
     setQuantity(quantity - 1);
 
-    alert("Book added to Readlist");
+    toast.success("Book added to Readlist");
   };
 
   const Readnow = () => {
     const savedUser = JSON.parse(localStorage.getItem("user"));
 
     if (!savedUser) {
-      alert("Please login first to read this book");
+      toast.error("Please login first to read this book");
       window.location.href = "/login";
       return;
     }
@@ -81,11 +83,11 @@ export default function BookDetails() {
         </div>
 
         <div>
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-800 leading-snug"> {book.title} </h1>
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-800"> {book.title} </h1>
 
           <p className="text-gray-600 mt-2">by {book.author}</p>
 
-          <p className="mt-4 text-gray-700 leading-relaxed"> {book.description} </p>
+          <p className="mt-4 text-gray-700">{book.description}</p>
 
           <p className="mt-4 text-sm text-gray-500"> {quantity} copies available </p>
 
@@ -102,15 +104,16 @@ export default function BookDetails() {
       </div>
 
       <div className="mt-20">
-        <h2 className="text-4xl font-semibold text-gray-800 mb-6"> You may also like ..... </h2>
+        
+        <h2 className="text-4xl font-semibold text-gray-800 mb-6"> You may also like..... </h2>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {relatedBooks.map((item) => (
             <Link key={item.id} href={`/books/${item.id}`}>
               <div className="cursor-pointer group">
                 <img src={item.image_url} alt={item.title} className="w-full shadow-md group-hover:scale-105 transition" />
-                <p className="text-sm mt-2 text-gray-700 group-hover:text-black"> {item.title} </p>
-                <p className="text-xs text-gray-500"> by {item.author} </p>
+                <p className="text-sm mt-2">{item.title}</p>
+                <p className="text-xs text-gray-500">by {item.author}</p>
               </div>
             </Link>
           ))}
