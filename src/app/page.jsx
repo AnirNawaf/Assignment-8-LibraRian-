@@ -3,6 +3,8 @@
 import books from "@/data/books.json";
 import Link from "next/link";
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
   const featuredBooks = books.slice(0, 4);
@@ -66,7 +68,7 @@ export default function Home() {
               <img src={book.image_url} alt={book.title} />
 
               <div className="card-body">
-                
+
                 <h3 className="card-title">{book.title}</h3>
 
                 <Link href={`/books/${book.id}`}  className="btn btn-sm btn-primary" >
@@ -80,7 +82,7 @@ export default function Home() {
         </div>
         <div className="flex mt-10 justify-end">
           <Link href="/all-books" className="btn btn-primary">
-            Visit All Books
+            Visit All Books <FontAwesomeIcon icon={faArrowRight} />
           </Link>
         </div>
       </section>
