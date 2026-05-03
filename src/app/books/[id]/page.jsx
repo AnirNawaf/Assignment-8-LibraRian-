@@ -48,8 +48,7 @@ export default function BookDetails() {
     }
 
     const updatedBook = {
-      ...book,
-      available_quantity: quantity - 1,
+      ...book, available_quantity: quantity - 1,
     };
 
     const newList = [...oldList, updatedBook];
@@ -104,7 +103,6 @@ export default function BookDetails() {
       </div>
 
       <div className="mt-20">
-        
         <h2 className="text-4xl font-semibold text-gray-800 mb-6"> You may also like..... </h2>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
