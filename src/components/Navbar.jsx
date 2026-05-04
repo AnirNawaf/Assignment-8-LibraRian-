@@ -28,32 +28,34 @@ export default function Navbar() {
     <div className="navbar bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-500 text-white shadow px-6">
 
       <div className="navbar-start">
-        <Link href="/" className="text-4xl font-bold">
+        <Link href="/" className="text-4xl  cursor-pointer transition hover:scale-120  font-bold">
           LibraRian
         </Link>
       </div>
 
       <div className="navbar-center gap-6 hidden md:flex">
-        <Link href="/" className={linkClass("/")}>
+
+        <Link href="/" className={`${linkClass("/")} cursor-pointer transition hover:scale-110`}>
           Home
         </Link>
 
-        <Link href="/all-books" className={linkClass("/all-books")}>
+        <Link href="/all-books" className={`${linkClass("/all-books")} cursor-pointer transition hover:scale-110`} >
           All Books
         </Link>
 
-        <Link href="/my-profile" className={linkClass("/my-profile")}>
+        <Link href="/my-profile" className={`${linkClass("/my-profile")} cursor-pointer transition hover:scale-110`} >
           My Profile
         </Link>
+
       </div>
 
       <div className="navbar-end">
         {!user ? (
-          <Link href="/login" className="btn bg-gradient-to-r from-gray-900 via-gray-800 to-gray-700 text-white shadow">
+          <Link href="/login" className="btn cursor-pointer transition hover:scale-120  bg-gradient-to-r from-gray-900 via-gray-800 to-gray-700 text-white shadow">
             Login
           </Link>
         ) : (
-          <button onClick={handleLogout} className="btn font-bold bg-gradient-to-r from-indigo-600 via-purple-600 via-pink-500 to-red-500 text-white shadow" >
+          <button onClick={handleLogout} className="btn  cursor-pointer transition hover:scale-120  font-bold bg-gradient-to-r from-indigo-600 via-purple-600 via-pink-500 to-red-500 text-white shadow" >
             Logout
           </button>
         )}

@@ -47,7 +47,7 @@ export default function LoginPage() {
 
             <input type="password" name="password" placeholder="Password" required className="input input-bordered w-full" />
 
-            <button className="btn btn-primary w-full">
+            <button className="  cursor-pointer transition hover:scale-105 btn btn-primary w-full">
               {loading ? "Logging in..." : "Login"}
             </button>
           </form>

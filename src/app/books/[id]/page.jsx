@@ -91,11 +91,11 @@ export default function BookDetails() {
           <p className="mt-4 text-sm text-gray-500"> {quantity} copies available </p>
 
           <div className="flex gap-4 mt-6">
-            <button onClick={Readnow} className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-md text-sm font-semibold" >
+            <button onClick={Readnow} className=" cursor-pointer transition hover:scale-120 bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-md text-sm font-semibold" >
               Read for free
             </button>
 
-            <button onClick={AddReadList} className="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-md text-sm font-semibold" >
+            <button onClick={AddReadList} className=" cursor-pointer transition hover:scale-120 bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-md text-sm font-semibold" >
               Add TO ReedLest
             </button>
           </div>

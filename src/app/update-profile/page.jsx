@@ -53,7 +53,7 @@ export default function UpdateProfilePage() {
 
             <input type="text" name="image" defaultValue={user.image || ""} placeholder="Image URL" className="input input-bordered w-full" />
 
-            <button className="btn btn-primary w-full"> Update Profile </button>
+            <button className=" cursor-pointer transition hover:scale-105 btn btn-primary w-full"> Update Profile </button>
           </form>
         </div>
       </div>

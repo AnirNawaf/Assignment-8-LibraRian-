@@ -32,9 +32,9 @@ export default function RegisterPage() {
         <input name="image" placeholder="Photo URL" className="input input-bordered w-full" required />
         <input name="password" type="password" placeholder="Password" className="input input-bordered w-full" required />
 
-        <button className="btn btn-primary w-full">Register</button>
+        <button className=" cursor-pointer transition hover:scale-105 btn btn-primary w-full">Register</button>
 
-        <button type="button" onClick={() => signIn("google", { callbackUrl: "/" })} className="btn btn-outline w-full flex items-center gap-2" >
+        <button type="button" onClick={() => signIn("google", { callbackUrl: "/" })} className=" cursor-pointer transition hover:scale-105 btn btn-outline w-full flex items-center gap-2" >
           <img src="https://www.svgrepo.com/show/475656/google-color.svg" className="w-5 h-5" alt="Google" />
           Continue with Google
         </button>

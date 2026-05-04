@@ -26,7 +26,7 @@ export default function MyProfilePage() {
         <h1> Please login first </h1>
 
         <Link href="/login" className="btn btn-primary mt-4"> Login </Link>
-        
+
       </div>
     );
   }
@@ -40,7 +40,7 @@ export default function MyProfilePage() {
           <h2 className="text-3xl font-bold">{user.name}</h2>
           <p>{user.email}</p>
 
-          <Link href="/update-profile" className="btn btn-primary mt-4">
+          <Link href="/update-profile" className="btn cursor-pointer transition hover:scale-120  btn-primary mt-4">
             Update Profile
           </Link>
         </div>

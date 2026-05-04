@@ -40,7 +40,7 @@ export default function AllBooks() {
 
       <aside className="space-y-3">
         {["All", "Story", "Tech", "Science", "Reedlist"].map((cat) => (
-          <button key={cat} onClick={() => setCategory(cat)} className="btn w-full" >
+          <button key={cat} onClick={() => setCategory(cat)} className="btn w-full  cursor-pointer transition hover:scale-120 " >
             {cat}
           </button>
         ))}
@@ -57,13 +57,13 @@ export default function AllBooks() {
               <div className="card-body">
                 <h2 className="card-title">{book.title}</h2>
 
-                <div className="flex gap-2">
-                  <Link href={`/books/${book.id}`} className="btn btn-primary btn-sm" >
+                <div className="flex gap-5">
+                  <Link href={`/books/${book.id}`} className="btn  cursor-pointer transition hover:scale-120  btn-primary btn-sm" >
                     Details
                   </Link>
 
                   {category === "Reedlist" && (
-                    <button onClick={() => handleRemove(book.id)} className="btn btn-error btn-sm" >
+                    <button onClick={() => handleRemove(book.id)} className="btn btn-error btn-sm  cursor-pointer transition hover:scale-120 " >
                       Remove
                     </button>
                   )}

@@ -19,10 +19,10 @@ export default function Home() {
     <main>
       <section className="hero min-h-[70vh] bg-base-200">
         <div className="text-center w-full max-w-2xl mx-auto">
-          <h1 className="text-5xl font-bold">Find Your Next Read</h1>
+          <h1 className="text-6xl font-bold">Find <span className="text-cyan-500">Y</span>our  <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent transition duration-300 hover:from-pink-500 hover:to-indigo-500"> Dream </span> <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-pulse"> Books </span> </h1>
 
-          <p className="py-6">
-            Borrow or Read books online anytime, anywhere.
+          <p className="py-6 text-2xl">
+            <span className="text-4xl">E</span>xplore a world of knowledge with <span className="font-bold">LibraRian</span>. Find your favorite books, Borrow or Read books online Anytime, Anywhere.
           </p>
 
           <input type="text"  placeholder="Search books by title"  className="input input-bordered w-full mb-6" onChange={(e) => setSearch(e.target.value)}/>
@@ -71,7 +71,7 @@ export default function Home() {
 
                 <h3 className="card-title">{book.title}</h3>
 
-                <Link href={`/books/${book.id}`}  className="btn btn-sm btn-primary" >
+                <Link href={`/books/${book.id}`}  className="btn  cursor-pointer transition hover:scale-110  btn-sm btn-primary" >
                   View Details
                 </Link>
               </div>
@@ -81,7 +81,7 @@ export default function Home() {
 
         </div>
         <div className="flex mt-10 justify-end">
-          <Link href="/all-books" className="btn btn-primary">
+          <Link href="/all-books" className="btn  cursor-pointer transition hover:scale-120 btn-primary">
             Visit All Books <FontAwesomeIcon icon={faArrowRight} />
           </Link>
         </div>
