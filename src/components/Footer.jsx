@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook, faXTwitter, faGithub, faLinkedin, faGoogle,
 } from "@fortawesome/free-brands-svg-icons";
+import toast from "react-hot-toast";
 
 export default function Footer() {
   return (
@@ -24,28 +25,39 @@ export default function Footer() {
             <input type="password" placeholder="Enter pasword" className="w-full bg-black text-white px-4 py-2 rounded-lg outline-none" />
 
 
-            <button onClick={() => {
-              const emailInput = document.querySelector('input[type="email"]');
+            <button
+              onClick={() => {
+                const existingUser = JSON.parse(localStorage.getItem("user"));
 
-              const email = emailInput?.value;
+                if (existingUser) {
+                  toast.error("Already logged in");
+                  return;
+                }
 
-              if (!email) {
-                alert("Enter email first");
-                return;
-              }
+                const emailInput = document.querySelector('input[type="email"]');
+                const email = emailInput?.value;
 
-              const userData = {
-                name: email.split("@")[0],
-                email,
-                image: "https://i.ibb.co.com/4pDNDk1/avatar.png",
-              };
+                if (!email) {
+                  toast.error("Enter email first");
+                  return;
+                }
 
-              localStorage.setItem("user", JSON.stringify(userData));
+                const userData = {
+                  name: email.split("@")[0],
+                  email,
+                  image: "https://i.ibb.co.com/4pDNDk1/avatar.png",
+                };
 
-              alert("Login successful!");
-              window.location.reload();
-            }}
-              className="bg-red-600 hover:bg-red-700 text-white text-xs font-bold px-4 py-2 rounded-xl" >
+                localStorage.setItem("user", JSON.stringify(userData));
+
+                toast.success("Login successful!");
+
+                setTimeout(() => {
+                  window.location.reload();
+                }, 8000);
+              }}
+              className="bg-red-600 hover:bg-red-700 text-white text-xs font-bold px-4 py-2 rounded-xl"
+            >
               SUBSCRIBE
             </button>
 
@@ -61,7 +73,7 @@ export default function Footer() {
           <p className="text-sm leading-6"> LibraRian <br /> Online Book Borrowing & reding Platform <br /> Rangpur, Dhaka, Bangladesh <br /> <a className="hover:text-white hover:text-xl" href="mailto:anirbishal08@gmail.com"> anirbishal08@gmail.com</a>
 
           </p>
-          
+
         </div>
 
         <div>
@@ -74,14 +86,14 @@ export default function Footer() {
             <li><a className="hover:text-white  hover:text-xl" href="#">Privacy Policy</a></li>
             <li><a className="hover:text-white hover:text-xl" href="#">Cookie Policy</a></li>
             <li><a className="hover:text-white hover:text-xl" href="#">Terms of Service</a></li>
-            
+
           </ul>
         </div>
 
         <div>
           <h3 className="text-white font-bold mb-5">Follow us</h3>
-          <div className="flex gap-3"> 
-            <a  href="https://www.facebook.com/share/1UzMdd6J2z/" className=" cursor-pointer transition hover:scale-120 w-8 h-8 rounded-full bg-blue-700 flex items-center justify-center text-white font-bold">
+          <div className="flex gap-3">
+            <a href="https://www.facebook.com/share/1UzMdd6J2z/" className=" cursor-pointer transition hover:scale-120 w-8 h-8 rounded-full bg-blue-700 flex items-center justify-center text-white font-bold">
               <FontAwesomeIcon icon={faFacebook} />
             </a>
 
