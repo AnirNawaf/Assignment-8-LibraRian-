@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## LibraRian - Online Book Library
 
-## Getting Started
+## Project Overview
+LibraRian is a modern online book library web application where users can search, read, and manage their own reading list. It is a client-side based project that uses LocalStorage for authentication and data management.
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Live Link
+ https://assignment-8-librarian.netlify.app/
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+#  Purpose
+The main goals of this project are:
+1. To create an easy-to-use platform for reading books online
+2. To implement user authentication using LocalStorage
+3. To build a modern UI/UX using React and Next.js
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Authentication
+A. Email-based login system
+B. Logout functionality
+C. Login option available from the footer
+D. Shows toast notification if already logged in
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Books System
+A. All Books page
+B. Book Details page
+C. Related books suggestions
+D. “Read” button (opens external link)
 
-## Deploy on Vercel
+# Read List
+A. Add books to a reading list
+B. Prevent duplicate entries
+C. Quantity management system
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Search System
+A. Search from the homepage
+B. Displays live search results
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+#  Profile System
+A. My Profile page
+B. Update profile functionality
+C. Set custom name and profile image
+
+#  Notifications
+  A. Using React Hot Toast for:
+  B. Login success
+  C. Logout success
+  D. Error messages
+
+# UI/UX
+A. Built with Tailwind CSS and DaisyUI
+B. Gradient Navbar & Footer
+C. Hover animations
+D. Fully responsive design
+
+### Technologies Used
+1.  Next.js 16 (App Router)
+2.  Tailwind CSS
+3.  DaisyUI
+4.  React Hot Toast
+5.  FontAwesome Icons
+6.  LocalStorage (for authentication & data handling)
+
+###  NPM Packages
+npm install
+1,  tailwindcss
+2, daisyui
+3. react-hot-toast @fortawesome/react-fontawesome @fortawesome/free-brands-svg-icons
+
+
