@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import toast from "react-hot-toast";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 export default function Navbar() {
   const [user, setUser] = useState(null);
@@ -26,16 +28,40 @@ export default function Navbar() {
 
   return (
     <div className="navbar bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-500 text-white shadow px-6">
-
       <div className="navbar-start">
-        <Link href="/" className="text-4xl  cursor-pointer transition hover:scale-120  font-bold">
+
+        <div className="dropdown md:hidden">
+
+          <button tabIndex={0} className="btn btn-ghost text-white text-2xl">
+              <FontAwesomeIcon icon={faBars} />
+          </button>
+
+          <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-50 p-3 shadow bg-base-100 text-black rounded-box w-52 space-y-2" >
+            <li>
+              <Link href="/" className={linkClass("/")}>
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link href="/all-books" className={linkClass("/all-books")}>
+                All Books
+              </Link>
+            </li>
+            <li>
+              <Link href="/my-profile" className={linkClass("/my-profile")}>
+              My Profile
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        <Link href="/"  className="text-4xl cursor-pointer transition hover:scale-120 font-bold" >
           LibraRian
         </Link>
       </div>
 
       <div className="navbar-center gap-6 hidden md:flex">
-
-        <Link href="/" className={`${linkClass("/")} cursor-pointer transition hover:scale-110`}>
+        <Link href="/" className={`${linkClass("/")} cursor-pointer transition hover:scale-110`} >
           Home
         </Link>
 
@@ -46,16 +72,15 @@ export default function Navbar() {
         <Link href="/my-profile" className={`${linkClass("/my-profile")} cursor-pointer transition hover:scale-110`} >
           My Profile
         </Link>
-
       </div>
 
       <div className="navbar-end">
         {!user ? (
-          <Link href="/login" className="btn cursor-pointer transition hover:scale-120  bg-gradient-to-r from-gray-900 via-gray-800 to-gray-700 text-white shadow">
+          <Link href="/login" className="btn cursor-pointer transition hover:scale-120 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-700 text-white shadow" >
             Login
           </Link>
         ) : (
-          <button onClick={handleLogout} className="btn  cursor-pointer transition hover:scale-120  font-bold bg-gradient-to-r from-indigo-600 via-purple-600 via-pink-500 to-red-500 text-white shadow" >
+          <button onClick={handleLogout} className="btn cursor-pointer transition hover:scale-120 font-bold bg-gradient-to-r from-indigo-600 via-purple-600 via-pink-500 to-red-500 text-white shadow" >
             Logout
           </button>
         )}
