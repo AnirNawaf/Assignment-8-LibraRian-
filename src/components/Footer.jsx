@@ -85,20 +85,19 @@ export default function Footer() {
               <FontAwesomeIcon icon={faFacebook} />
             </a>
 
-            <a href="" className=" cursor-pointer transition hover:scale-120 w-8 h-8 rounded-full bg-black flex items-center justify-center text-white font-bold">
-              <FontAwesomeIcon icon={faXTwitter} />
-            </a>
-
-            <a href="" className=" cursor-pointer transition hover:scale-120 w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center text-white font-bold">
+            <a href="https://github.com/AnirNawaf" className=" cursor-pointer transition hover:scale-120 w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center text-white font-bold">
               <FontAwesomeIcon icon={faGithub} />
             </a>
 
-            <a href="" className=" cursor-pointer transition hover:scale-120 w-8 h-8 rounded-full bg-red-600 flex items-center justify-center text-white font-bold">
+            <a href="https://www.linkedin.com/in/md-anir-nawaf-bishal-34aa7a239/" className=" cursor-pointer transition hover:scale-120 w-8 h-8 rounded-full bg-red-600 flex items-center justify-center text-white font-bold">
               <FontAwesomeIcon icon={faLinkedin} />
             </a>
 
-            <a href="" className=" cursor-pointer transition hover:scale-120 w-8 h-8 rounded-full bg-green-600 flex items-center justify-center text-white font-bold">
+            <a href="mailto:anirbishal08@gmail.com" className=" cursor-pointer transition hover:scale-120 w-8 h-8 rounded-full bg-green-600 flex items-center justify-center text-white font-bold">
               <FontAwesomeIcon icon={faGoogle} />
+            </a>
+            <a href="#" className=" cursor-pointer transition hover:scale-120 w-8 h-8 rounded-full bg-black flex items-center justify-center text-white font-bold">
+              <FontAwesomeIcon icon={faXTwitter} />
             </a>
           </div>
         </div>
